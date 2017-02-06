@@ -24,11 +24,11 @@ describe('manageFriends', function() {
   let state = {numberOfPresents: 0, friends: [{name: 'Avi', hometown: 'NYC', id: 100}]}
 
   it("returns the existing state if the action's type doesn't match a type in the reducer", function() {
-    expect(manageFriends(state, {type: 'Random Action Type'})).toEqual(state);
+    expect ( manageFriends ( state, {type: 'Random Action Type'})).toEqual(state);
   })
 
-  it("adds the friend when type is 'ADD_FRIEND' and the action has a payload property with the friend", function(){
-    expect(manageFriends(state, {type: "ADD_FRIEND", payload: {name: 'Joe', hometown: 'Boston', id: 101}})).toEqual({numberOfPresents: 0, friends: [{name: 'Avi', hometown: 'NYC', id: 100}, {name: 'Joe', hometown: 'Boston', id: 101}]});
+  it("adds the friend when type is 'ADD_FRIEND' and the action has a payload property with the friend", function () {
+    expect ( manageFriends( state, {type: "ADD_FRIEND", payload: {name: 'Joe', hometown: 'Boston', id: 101}})).toEqual({numberOfPresents: 0, friends: [{name: 'Avi', hometown: 'NYC', id: 100}, {name: 'Joe', hometown: 'Boston', id: 101}]});
   })
 
   it("removes the friend when action type is 'REMOVE_FRIEND' and the action has a payload property of the friend's id to be removed", function(){
